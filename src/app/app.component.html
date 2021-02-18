@@ -1,0 +1,67 @@
+<div class="bg">
+  <h3 class="title"><b> SpaceX Launch Programs</b> </h3>
+  <div class="row" style="    margin-left: 0px;">
+    <div class="col-md-2">
+
+      <label class="padLR cardfilter" style="background-color: white;     padding-left: 12px;">
+        <p style="padding-top: 8px;"> <b>Filters</b></p>
+        <p class="header"> <u> Launch Year</u></p>
+
+        <button *ngFor="let year of lstYears; let i=index" [ngClass]="i === strYear ? 'btn-year active':'btn-year'"
+          id="'btn'+i" (click)="fnGetFilterData(year['year'],statusLaunch,statusLand); strYear=i">
+          <b> {{year['year']}} </b>
+        </button>
+
+        <p class="header"> <u> Succesful Launch</u></p>
+
+        <button [ngClass]=" strLaunch===1?  'btn-year active': ' btn-year'" id="btn_launchtrue"
+          (click)="fnGetFilterData(selectedYear,true,statusLand); strLaunch=1">
+          <b> True </b>
+        </button>
+        <button [ngClass]=" strLaunch===0?  'btn-year active': ' btn-year '" id="btn_launchfalse"
+          (click)="fnGetFilterData(selectedYear,false,statusLand) ; strLaunch=0">
+          <b> False </b>
+        </button>
+
+        <p class="header"> <u> Succesful Landing</u></p>
+
+        <button [ngClass]=" strLand===1?  'btn-year active': ' btn-year'" id="btn_landingtrue"
+          (click)="fnGetFilterData(selectedYear,statusLaunch,true); strLand=1">
+          <b> True </b>
+        </button>
+        <button [ngClass]=" strLand===0?  'btn-year active': ' btn-year '" id="btn_landingfalse"
+          (click)="fnGetFilterData(selectedYear,statusLaunch,false); strLand=0">
+          <b> False </b>
+        </button>
+      </label>
+
+    </div>
+    <div class="col-md-10 marLeft">
+      <label *ngFor="let space of lstSpace;let k=index;  " class="card padLR marTB">
+        <img style="background-color:#f7f7f7 ;" [src]="space['links']['mission_patch']" height="200px" width="210px"
+          alt="space">
+        <div class="ps" style="position: relative; max-height: 156px; min-height: 156px" [perfectScrollbar]="config">
+
+          <p class="marTB8 name">
+            {{space['mission_name']}} #{{ space['flight_number'] }}
+          </p>
+          <p>
+            <b> Mission Ids: </b> <span class="content" *ngIf="space['mission_id'].length==0"> None </span>
+          </p>
+          <ul>
+            <li class="content" *ngFor="let mid of space['mission_id']; let i=index ">
+              {{ mid }}
+            </li>
+          </ul>
+          <p>
+            <b> Launch Year: </b> <span class="content"> {{ space['launch_year'] }} </span>
+          </p>
+          <p><b> Successful Launch: </b> <span class="content"> {{ space['launch_success'] }} </span> </p>
+          <p><b> Successful Landing: </b> <span class="content"> {{ space['launch_success'] }} </span></p>
+
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <h5 style="text-align: center;"><b> Developed By </b> Swathi Tamiri</h5>

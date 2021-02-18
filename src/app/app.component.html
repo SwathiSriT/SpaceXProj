@@ -7,30 +7,30 @@
         <p style="padding-top: 8px;"> <b>Filters</b></p>
         <p class="header"> <u> Launch Year</u></p>
 
-        <button *ngFor="let year of lstYears; let i=index" [ngClass]="i === strYear ? 'btn-year active':'btn-year'"
+        <button *ngFor="let year of lstYears; let i=index" [ngClass]="i == strYear ? 'btn-year active':'btn-year'"
           id="'btn'+i" (click)="fnGetFilterData(year['year'],statusLaunch,statusLand); strYear=i">
           <b> {{year['year']}} </b>
         </button>
 
         <p class="header"> <u> Succesful Launch</u></p>
 
-        <button [ngClass]=" strLaunch===1?  'btn-year active': ' btn-year'" id="btn_launchtrue"
-          (click)="fnGetFilterData(selectedYear,true,statusLand); strLaunch=1">
+        <button [ngClass]=" strLaunch=='1'?  'btn-year active': ' btn-year'" id="btn_launchtrue"
+          (click)="fnGetFilterData(selectedYear,true,statusLand); strLaunch='1'">
           <b> True </b>
         </button>
-        <button [ngClass]=" strLaunch===0?  'btn-year active': ' btn-year '" id="btn_launchfalse"
-          (click)="fnGetFilterData(selectedYear,false,statusLand) ; strLaunch=0">
+        <button [ngClass]=" strLaunch=='0'?  'btn-year active': ' btn-year '" id="btn_launchfalse"
+          (click)="fnGetFilterData(selectedYear,false,statusLand) ; strLaunch='0'">
           <b> False </b>
         </button>
 
         <p class="header"> <u> Succesful Landing</u></p>
 
-        <button [ngClass]=" strLand===1?  'btn-year active': ' btn-year'" id="btn_landingtrue"
-          (click)="fnGetFilterData(selectedYear,statusLaunch,true); strLand=1">
+        <button [ngClass]=" strLand=='1'?  'btn-year active': ' btn-year'" id="btn_landingtrue"
+          (click)="fnGetFilterData(selectedYear,statusLaunch,true); strLand='1'">
           <b> True </b>
         </button>
-        <button [ngClass]=" strLand===0?  'btn-year active': ' btn-year '" id="btn_landingfalse"
-          (click)="fnGetFilterData(selectedYear,statusLaunch,false); strLand=0">
+        <button [ngClass]=" strLand=='0'?  'btn-year active': ' btn-year '" id="btn_landingfalse"
+          (click)="fnGetFilterData(selectedYear,statusLaunch,false); strLand='0'">
           <b> False </b>
         </button>
       </label>

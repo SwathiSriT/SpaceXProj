@@ -137,3 +137,13 @@
     overflow-y: auto;
 }
 
+
+.filter{
+    background-color: white;     
+    padding-left: 12px;
+}
+.nodata
+{
+    text-align: center;
+    color: Red;
+}

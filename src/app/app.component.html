@@ -1,9 +1,10 @@
+<ng4-loading-spinner> </ng4-loading-spinner>
 <div class="bg">
   <h3 class="title"><b> SpaceX Launch Programs</b> </h3>
   <div class="row" style="    margin-left: 0px;">
     <div class="col-md-2">
 
-      <label class="padLR cardfilter" style="background-color: white;     padding-left: 12px;">
+      <label class="padLR cardfilter filter" >
         <p style="padding-top: 8px;"> <b>Filters</b></p>
         <p class="header"> <u> Launch Year</u></p>
 
@@ -61,6 +62,8 @@
 
         </div>
       </label>
+      <h2 *ngIf="blnNodata" class='nodata'> {{noData}}</h2>
+
     </div>
   </div>
 

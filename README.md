@@ -2,6 +2,24 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
 
+## Project SETUP
+
+Below softwares to be downloaded in this order 
+  a. Node
+  b. Typescript
+  c. Visual Studio Code(IDE)
+  
+Create folder and from here give 'cmd' > enter in address bar to open command prompt. Give command 'code .' and enter, it opens Visual Studio Code.
+
+Go to Terminal(top menu in IDE) > New Terninal and fooloow below steps
+  a. command : git clone https://github.com/SwathiSriT/SpaceXProj.git 
+  b. Get into the project folder to carry on with further steps
+     Install all packages (command: npm install)
+     Run the project locally (command : ng s -o)
+     Build project and deploy (command : ng build --prod)
+     
+Download the "Browser Preview" from VS code extensions which helps to preview the application inside VS code.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

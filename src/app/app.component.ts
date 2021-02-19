@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   selectedYear: number;
   statusLaunch;
   statusLand;
-  strYear = "";
+  strYear ;
   strLaunch = "";
   strLand = "";
   config: PerfectScrollbarConfigInterface = {

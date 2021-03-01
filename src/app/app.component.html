@@ -1,37 +1,39 @@
 <ng4-loading-spinner> </ng4-loading-spinner>
 <div class="bg">
-  <h3 class="title"><b> SpaceX Launch Programs</b> </h3>
-  <div class="row" style="    margin-left: 0px;">
+  <header>
+    <h3 class="title"><b> SpaceX Launch Programs</b> </h3>
+  </header>
+
+  <div class="row marL">
     <div class="col-md-2">
 
-      <label class="padLR cardfilter filter" >
-        <p style="padding-top: 8px;"> <b>Filters</b></p>
+      <label class="padLR cardfilter filter">
+        <p class="padT"> <b>Filters</b></p>
         <p class="header"> <u> Launch Year</u></p>
 
         <button *ngFor="let year of lstYears; let i=index" [ngClass]="i == strYear ? 'btn-year active':'btn-year'"
-          [id]="'btn'+i" (click)="fnGetFilterData(year['year'],statusLaunch,statusLand); strYear=i">
+          [id]="'btn'+i" (click)="fnGetFilterData(year['year'],statusLaunch,statusLand , 'year',i) ">
           <b> {{year['year']}} </b>
         </button>
-
         <p class="header"> <u> Succesful Launch</u></p>
 
         <button [ngClass]=" strLaunch=='1'?  'btn-year active': ' btn-year'" id="btn_launchtrue"
-          (click)="fnGetFilterData(selectedYear,true,statusLand); strLaunch='1'">
+          (click)=" fnGetFilterData(selectedYear,true,statusLand , 'launch',1)">
           <b> True </b>
         </button>
         <button [ngClass]=" strLaunch=='0'?  'btn-year active': ' btn-year '" id="btn_launchfalse"
-          (click)="fnGetFilterData(selectedYear,false,statusLand) ; strLaunch='0'">
+          (click)="fnGetFilterData(selectedYear,false,statusLand, 'launch',0) ; ">
           <b> False </b>
         </button>
 
         <p class="header"> <u> Succesful Landing</u></p>
 
         <button [ngClass]=" strLand=='1'?  'btn-year active': ' btn-year'" id="btn_landingtrue"
-          (click)="fnGetFilterData(selectedYear,statusLaunch,true); strLand='1'">
+          (click)="fnGetFilterData(selectedYear,statusLaunch,true, 'land',1)">
           <b> True </b>
         </button>
         <button [ngClass]=" strLand=='0'?  'btn-year active': ' btn-year '" id="btn_landingfalse"
-          (click)="fnGetFilterData(selectedYear,statusLaunch,false); strLand='0'">
+          (click)="fnGetFilterData(selectedYear,statusLaunch,false, 'land',0)">
           <b> False </b>
         </button>
       </label>
@@ -39,9 +41,8 @@
     </div>
     <div class="col-md-10 marLeft">
       <label *ngFor="let space of lstSpace;let k=index;  " class="card padLR marTB">
-        <img style="background-color:#f7f7f7 ;" [src]="space['links']['mission_patch']" height="200px" width="210px"
-          alt="space">
-        <div class="ps" style="position: relative; max-height: 156px; min-height: 156px" [perfectScrollbar]="config">
+        <img class="imgcls" [src]="space['links']['mission_patch']" alt="space">
+        <div class="ps" [perfectScrollbar]="config">
 
           <p class="marTB8 name">
             {{space['mission_name']}} #{{ space['flight_number'] }}
@@ -62,9 +63,11 @@
 
         </div>
       </label>
-      <h2 *ngIf="blnNodata" class='nodata'> {{noData}}</h2>
+      <h3 *ngIf="blnNodata" class='nodata'> {{noData}}</h3>
 
     </div>
   </div>
 
-  <h5 style="text-align: center;"><b> Developed By </b> Swathi Tamiri</h5>
+  <footer>
+    <h5><b> Developed By </b> Swathi Tamiri</h5>
+  </footer>

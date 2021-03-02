@@ -17,7 +17,7 @@ suppressScrollY: false
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     FormsModule, PerfectScrollbarModule ,
     Ng4LoadingSpinnerModule.forRoot()

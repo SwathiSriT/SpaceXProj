@@ -212,6 +212,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     // Clearing sessionstorage
-    sessionStorage.clear();
+    //sessionStorage.clear();
   }
 }
